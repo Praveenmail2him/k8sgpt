@@ -73,7 +73,10 @@ func ListFilters() ([]string, []string, []string) {
 				fmt.Println(color.RedString(err.Error()))
 				os.Exit(1)
 			}
-			integrationAnalyzers = append(integrationAnalyzers, in.GetAnalyzerName())
+			for _, analyzers := range in.GetAnalyzerName() {
+
+				integrationAnalyzers = append(integrationAnalyzers, analyzers)
+			}
 		}
 	}
 
